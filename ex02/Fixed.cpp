@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: niceguy <niceguy@student.42.fr>            +#+  +:+       +#+        */
+/*   By: evallee- <evallee-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 17:03:44 by evallee-          #+#    #+#             */
-/*   Updated: 2023/11/28 13:14:54 by niceguy          ###   ########.fr       */
+/*   Updated: 2023/11/30 15:50:58 by evallee-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,7 +131,7 @@ Fixed&	Fixed::operator*(const Fixed& other) {
 }
 
 Fixed&	Fixed::operator/(const Fixed& other) {
-	Fixed add = Fixed(toFloat() * other.toFloat());
+	Fixed add = Fixed(toFloat() / other.toFloat());
 	_rawBits = add.getRawBits();
 	return (*this);
 }
@@ -148,6 +148,10 @@ bool	Fixed::operator>(const Fixed& other) {
 
 bool	Fixed::operator<=(const Fixed& other) {
 	return (toFloat() <= other.toFloat());
+}
+
+bool	Fixed::operator>=(const Fixed& other) {
+	return (toFloat() >= other.toFloat());
 }
 
 bool	Fixed::operator==(const Fixed& other) {
